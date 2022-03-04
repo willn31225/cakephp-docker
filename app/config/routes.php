@@ -44,18 +44,19 @@ return static function (RouteBuilder $routes) {
      */
     $routes->setRouteClass(DashedRoute::class);
 
-    $routes->scope('/', function (RouteBuilder $builder) {
+    //$routes->scope('/', function (RouteBuilder $builder) {
         /*
          * Here, we are connecting '/' (base path) to a controller called 'Pages',
          * its action called 'display', and we pass a param to select the view file
          * to use (in this case, templates/Pages/home.php)...
          */
-        $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+        //$builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+        //$builder->connect('/users', ['controller' => 'Users', 'action' => 'index', 'users-index']);
 
         /*
          * ...and connect the rest of 'Pages' controller's URLs.
          */
-        $builder->connect('/pages/*', 'Pages::display');
+        //$builder->connect('/pages/*', 'Pages::display');
 
         /*
          * Connect catchall routes for all controllers.
@@ -70,7 +71,12 @@ return static function (RouteBuilder $routes) {
          * You can remove these routes once you've connected the
          * routes you want in your application.
          */
-        $builder->fallbacks();
+        //$builder->fallbacks();
+    //});
+
+    $routes->scope('/v1', function (RouteBuilder $routes) {
+        $routes->setExtensions(['json']);
+        $routes->resources('Users');
     });
 
     /*
