@@ -37,3 +37,4 @@ nbproject/*
 # project files     #
 ######################
 .docker/php/development/conf.d/*.ini
+/app/node_modules/
