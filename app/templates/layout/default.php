@@ -16,6 +16,7 @@
 
 $cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
+<?= $this->AssetMix->script('app') ?>
 <!DOCTYPE html>
 <html>
 <head>

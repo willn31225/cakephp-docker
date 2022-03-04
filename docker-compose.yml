@@ -2,8 +2,8 @@ version: '3.4'
 
 services:
   php:
+    container_name: app
     build:
-      container_name: app
       context: .
       target: cakephp_php
     env_file:
